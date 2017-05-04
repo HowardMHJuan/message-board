@@ -36,7 +36,7 @@ class CommentContainer extends Component {
   }
   addComment = () => {
     let comments = this.state.comments;
-    let comment = {
+    const comment = {
       name: this.props.name,
       time: new Date(),
       content: this.state.commentContent,
@@ -57,7 +57,7 @@ class CommentContainer extends Component {
     });
   }
   addReply = (commentId, replyContent) => {
-    let reply = {
+    const reply = {
       name: this.props.name,
       time: new Date(),
       content: replyContent,
