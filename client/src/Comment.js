@@ -19,11 +19,20 @@ class Comment extends Component {
       this.setState({replyContent: ''});
     }
   }
+  getTime = () => {
+    const time = new Date(this.props.time);
+    const year = time.getFullYear();
+    const month = time.getMonth();
+    const date = time.getDate();
+    const hour = time.getHours();
+    const minute = time.getMinutes();
+    return `commented at ${year}/${month}/${date} ${hour}:${minute}`;
+  }
   render = () => {
     return (
       <div className="Comment">
         <p>{this.props.name}</p>
-        <p>{this.props.time.getHours()}</p>
+        <p>{this.getTime()}</p>
         <p>{this.props.content}</p>
         {this.props.replies.map((reply) => <Reply 
           name={reply.name}
