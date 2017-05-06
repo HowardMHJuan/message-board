@@ -4,6 +4,6 @@ import MessageApp from './MessageApp';
 import './index.css';
 
 ReactDOM.render(
-  <MessageApp />,
+  <MessageApp FB={window.FB}/>,
   document.getElementById('root')
 );
