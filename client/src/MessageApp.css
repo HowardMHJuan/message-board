@@ -2,9 +2,18 @@
   text-align: center;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.App-header p {
+  font-size: 3em;
+  margin: 0 0 0 0;
+}
+
+.login-section,
+.login-section p {
+  text-align: right;
+  height: 0em;
+  margin: 0 2em 0 0;
+}
+
+.fb-login-button {
+  margin: 2em 0 0 0;
 }

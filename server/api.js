@@ -15,6 +15,12 @@ let data = [                              // eslint-disable-line prefer-const
       },
     ],
   },
+  {
+    name: 'Dr. Ji',
+    time: new Date(),
+    content: 'I think students of EE and MED are ALL arrogant and supercilious.',
+    replies: [],
+  },
 ];
 
 router.get('/comments', (req, res) => {

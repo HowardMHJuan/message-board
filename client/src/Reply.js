@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Reply.css';
 
 class Reply extends Component {
   getTime = () => {
@@ -13,9 +14,13 @@ class Reply extends Component {
   render = () => {
     return (
       <div className="Reply">
-        <p>{this.props.name}</p>
-        <p>{this.getTime()}</p>
-        <p>{this.props.content}</p>
+        <div className="row reply-name">
+          <p className="col s2 offset-s4" id="reply-name">{this.props.name}</p>
+          <p className="col s3" id="reply-time">{this.getTime()}</p>
+        </div>
+        <div className="row reply-content">
+          <p className="col s5 offset-s4" id="reply-content">{this.props.content}</p>
+        </div>
       </div>
     );
   }

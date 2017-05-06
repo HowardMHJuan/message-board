@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'babel-polyfill';
 import fetch from 'isomorphic-fetch';
 import Comment from './Comment';
+import './CommentContainer.css';
 
 class CommentContainer extends Component {
   constructor() {
@@ -77,8 +78,10 @@ class CommentContainer extends Component {
     });
   }
   handleSend = () => {
-    if(this.state.commentContent.trim().length === 0) {
-      alert('Comment cannot be blank!');
+    if(this.props.login === false) {
+      this.props.Materialize.toast('Please login first', 4000);
+    } else if(this.state.commentContent.trim().length === 0) {
+      this.props.Materialize.toast('Comment cannot be blank', 4000);
     } else {
       this.addComment();
     }
@@ -93,14 +96,23 @@ class CommentContainer extends Component {
           content={comment.content}
           replies={comment.replies}
           addReply={this.addReply}
+          Materialize={this.props.Materialize}
         />)}
-        <input 
-          type="text"
-          placeholder="Add a comment..."
-          value={this.state.commentContent} 
-          onChange={this.handleInputChange}
-        />
-        <button onClick={this.handleSend}>SEND</button>
+        <div className="row">
+          <form className="col s12">
+            <div className="input-field col s6 offset-s3">
+              <textarea 
+                id="comment"
+                className="materialize-textarea"
+                type="text"
+                value={this.state.commentContent} 
+                onChange={this.handleInputChange}
+              />
+              <label htmlFor="comment">Add a comment...</label>
+            </div>
+            <a className="waves-effect waves-teal btn-flat col s1" onClick={this.handleSend}>Post</a>
+          </form>
+        </div>
       </div>
     );
   }
