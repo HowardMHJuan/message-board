@@ -5,21 +5,15 @@ const router = express.Router();
 let data = [                              // eslint-disable-line prefer-const
   {
     name: 'Pusheen',
-    time: new Date(),
+    time: new Date('May 4, 2017 11:13:00'),
     content: 'Hi~ I\'m pusheen the cat.',
     replies: [
       {
         name: 'Howard',
-        time: new Date(),
+        time: new Date('May 4, 2017 11:15:00'),
         content: '>////<',
       },
     ],
-  },
-  {
-    name: 'Dr. Ji',
-    time: new Date(),
-    content: 'I think students of EE are ALL arrogant and supercilious.',
-    replies: [],
   },
 ];
 

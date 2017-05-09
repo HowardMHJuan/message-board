@@ -25,10 +25,10 @@ class Comment extends Component {
   getTime = () => {
     const time = new Date(this.props.time);
     const year = time.getFullYear();
-    const month = time.getMonth();
+    const month = time.getMonth() + 1;
     const date = time.getDate();
-    const hour = time.getHours();
-    const minute = time.getMinutes();
+    const hour = (`0${time.getHours()}`).slice(-2);
+    const minute = (`0${time.getMinutes()}`).slice(-2);
     return `commented at ${year}/${month}/${date} ${hour}:${minute}`;
   }
   toggleReply = (f) => {

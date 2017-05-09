@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './MessageApp.css';
 import CommentContainer from './CommentContainer';
+import 'disable-react-devtools';
 
 class MessageApp extends Component {
   constructor() {
